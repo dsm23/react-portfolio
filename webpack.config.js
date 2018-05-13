@@ -40,7 +40,7 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
@@ -136,7 +136,7 @@ const config = {
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      test: /\.jsx?$/,
+      test: /\.(js|jsx)?$/,
       options: {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),

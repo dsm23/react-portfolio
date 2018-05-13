@@ -1,5 +1,11 @@
 export { default as App } from './App';
 export { default as Home } from './Home';
+export { default as Wiki } from './Wiki';
 export { default as About } from './About';
+export { default as Simon } from './Simon';
 export { default as Contact } from './Contact';
+export { default as Weather } from './Weather';
+export { default as Pomodoro } from './Pomodoro';
 export { default as Calculator } from './Calculator';
+export { default as Experience } from './Experience';
+export { default as NoughtsAndCrosses } from './NoughtsAndCrosses';

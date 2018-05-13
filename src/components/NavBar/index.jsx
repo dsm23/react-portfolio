@@ -36,7 +36,7 @@ const NavBar = (props) => {
           <Button color="inherit">PROJECTS</Button>
           <Button color="inherit" href="/about">ABOUT</Button>
           <Button color="inherit">EXPERIENCE</Button>
-          <Button color="inherit">CONTACT</Button>
+          <Button color="inherit" href="/contact">CONTACT</Button>
         </Toolbar>
       </AppBar>
     </div>
