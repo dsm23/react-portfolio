@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import WorkIcon from '@material-ui/icons/Work';
@@ -11,13 +14,13 @@ import GridOnIcon from '@material-ui/icons/GridOn';
 import MemoryIcon from '@material-ui/icons/Memory';
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
-import Divider from 'material-ui/Divider';
+import Divider from '@material-ui/core/Divider';
 
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
 
-import Collapse from 'material-ui/transitions/Collapse';
+import Collapse from '@material-ui/core/Collapse';
 
 export default class DrawerListItems extends React.Component {
   state = { open: false };
@@ -71,31 +74,31 @@ export default class DrawerListItems extends React.Component {
               </ListItemIcon>
               <ListItemText primary="Calculator" />
             </ListItem>
-            <ListItem button component="a" >
+            <ListItem button component="a" href="/weather">
               <ListItemIcon>
                 <CloudIcon />
               </ListItemIcon>
               <ListItemText primary="Weather" />
             </ListItem>
-            <ListItem button component="a">
+            <ListItem button component="a" href="/noughts-and-crosses">
               <ListItemIcon>
                 <GamesIcon />
               </ListItemIcon>
               <ListItemText primary="Noughts and Crosses" />
             </ListItem>
-            <ListItem button component="a">
+            <ListItem button component="a" href="/pomodoro">
               <ListItemIcon>
                 <AlarmIcon />
               </ListItemIcon>
               <ListItemText primary="Pomodoro Timer" />
             </ListItem>
-            <ListItem button component="a">
+            <ListItem button component="a" href="/simon">
               <ListItemIcon>
                 <MemoryIcon />
               </ListItemIcon>
               <ListItemText primary="Simon Game" />
             </ListItem>
-            <ListItem button component="a">
+            <ListItem button component="a" href="/wiki">
               <ListItemIcon>
                 <SearchIcon />
               </ListItemIcon>

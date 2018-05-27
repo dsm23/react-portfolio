@@ -1,3 +1,3 @@
-export { default as ClippedDrawer } from './ClippedDrawer';
-export { default as NavBar } from './NavBar';
-export { default as Page } from './Page';
+export ClippedDrawer from './ClippedDrawer';
+export NavBar from './NavBar';
+export Page from './Page';

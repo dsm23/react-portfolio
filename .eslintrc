@@ -18,7 +18,7 @@
     "import/prefer-default-export": "off",
     "space-before-function-paren": "off",
     "react/prefer-stateless-function": "warn",
-    "react/forbid-prop-types": "off",
+    "react/forbid-prop-types": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "linebreak-style": "off",
     "global-require": "off",

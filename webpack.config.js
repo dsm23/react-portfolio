@@ -2,19 +2,19 @@ const { resolve } = require('path');
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const config = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
+  mode: 'development',
 
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8090',
-    'webpack/hot/only-dev-server',
-    './src/main.js',
-    // './assets/scss/main.scss',
-  ],
+  entry: {
+    app: './src/main.js',
+  },
 
   output: {
     filename: 'bundle.js',
@@ -135,6 +135,7 @@ const config = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(['build']),
     new webpack.LoaderOptionsPlugin({
       test: /\.(js|jsx)?$/,
       options: {
@@ -142,12 +143,18 @@ const config = {
           configFile: resolve(__dirname, '.eslintrc'),
           cache: false,
         },
+        plugins: ['react-hot-loader/babel'],
       },
+    }),
+    new HtmlWebpackPlugin({
+      title: 'David Murdoch Portfolio',
+      template: './index.template',
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
