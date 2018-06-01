@@ -40,12 +40,12 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js|jsx)?$/,
+        test: /\.js?/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
       {
-        test: /\.(js|jsx)?$/,
+        test: /\.js?/,
         loaders: [
           'babel-loader',
         ],
@@ -137,7 +137,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(['build']),
     new webpack.LoaderOptionsPlugin({
-      test: /\.(js|jsx)?$/,
+      test: /\.js?/,
       options: {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),
@@ -148,7 +148,7 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       title: 'David Murdoch Portfolio',
-      template: './index.template',
+      template: 'index.ejs',
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),

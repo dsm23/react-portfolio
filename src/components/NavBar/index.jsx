@@ -44,7 +44,11 @@ const NavBar = (props) => {
 };
 
 NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    flex: PropTypes.string,
+    menuButton: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles)(NavBar);

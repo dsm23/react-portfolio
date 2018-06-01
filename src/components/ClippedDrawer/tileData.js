@@ -31,7 +31,6 @@ export default class DrawerListItems extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <div>
         <ListItem button component="a" href="/about">
@@ -112,5 +111,7 @@ export default class DrawerListItems extends React.Component {
 }
 
 DrawerListItems.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({
+    nested: PropTypes.object,
+  }).isRequired,
 };

@@ -38,7 +38,10 @@ function Page(props) {
 }
 
 Page.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    paper: PropTypes.string,
+  }).isRequired,
   title: PropTypes.string.isRequired,
   paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
