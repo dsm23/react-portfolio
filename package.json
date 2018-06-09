@@ -8,7 +8,7 @@
     "url": "git+https://github.com/dsm23/reactPortfolio.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.common.js",
+    "start": "webpack-dev-server --inline --hot --open --config webpack.dev.js",
     "build": "webpack --open --config webpack.prod.js"
   },
   "author": "davidMurdoch",

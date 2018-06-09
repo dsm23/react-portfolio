@@ -6,12 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const config = {
-  devtool: 'inline-source-map',
-  mode: 'development',
-
   entry: {
     app: './src/main.js',
   },
@@ -19,20 +15,10 @@ const config = {
   output: {
     filename: 'bundle.js',
     path: resolve(__dirname, 'public'),
-    publicPath: '',
+    publicPath: '/',
   },
 
   context: resolve(__dirname, '.'),
-
-  devServer: {
-    hot: true,
-    contentBase: resolve(__dirname, 'public'),
-    historyApiFallback: true,
-    host: 'localhost',
-    inline: true,
-    publicPath: resolve(__dirname, '.'),
-    port: 8090,
-  },
 
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -138,7 +124,17 @@ const config = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(
+      [
+        'public',
+      ],
+      {
+        root: resolve(__dirname, 'src'),
+        exclude: '/node_modules/',
+        verbose: true,
+        dry: false,
+      },
+    ),
     new webpack.LoaderOptionsPlugin({
       test: /\.js?/,
       options: {
@@ -157,7 +153,7 @@ const config = {
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
   ],
 };
 
