@@ -2,9 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import { hot } from 'react-hot-loader';
-
-
 import {
   ClippedDrawer,
   NavBar,
@@ -52,4 +49,4 @@ const App = () => {
   );
 };
 
-export default hot(module)(App);
+export default App;

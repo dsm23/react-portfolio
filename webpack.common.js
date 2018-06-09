@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+// const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const config = {
   devtool: 'inline-source-map',
@@ -18,17 +18,20 @@ const config = {
 
   output: {
     filename: 'bundle.js',
-    path: resolve(__dirname, '.'),
-    publicPath: '/',
+    path: resolve(__dirname, 'public'),
+    publicPath: '',
   },
 
   context: resolve(__dirname, '.'),
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
+    contentBase: resolve(__dirname, 'public'),
     historyApiFallback: true,
-    publicPath: '/',
+    host: 'localhost',
+    inline: true,
+    publicPath: resolve(__dirname, '.'),
+    port: 8090,
   },
 
   resolve: {
@@ -143,7 +146,6 @@ const config = {
           configFile: resolve(__dirname, '.eslintrc'),
           cache: false,
         },
-        plugins: ['react-hot-loader/babel'],
       },
     }),
     new HtmlWebpackPlugin({
@@ -153,7 +155,7 @@ const config = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
-    new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
+    // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],

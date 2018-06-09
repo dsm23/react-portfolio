@@ -2,15 +2,10 @@
   "presets": [
     "env",
     "react",
-    [ "env", {
-      "targets": {
-        "browsers": "> 2%"
-      }
-    }]
+    "stage-3",
   ],
 
   "plugins": [
-    "react-hot-loader/babel",
     "transform-class-properties",
     "transform-export-extensions"
   ]

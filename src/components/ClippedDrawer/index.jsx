@@ -49,7 +49,7 @@ function ClippedDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography noWrap>You think water moves fast? You should see ice. David</Typography>
+        <Typography noWrap>You think water moves fast? You should see ice.</Typography>
       </main>
     </div>
   );
