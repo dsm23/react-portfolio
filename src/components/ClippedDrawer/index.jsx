@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 
 import DrawerListItems from './tileData';
 
@@ -32,7 +31,7 @@ const styles = theme => ({
 });
 
 function ClippedDrawer(props) {
-  const { classes } = props;
+  const { children, classes } = props;
 
   return (
     <div className={classes.root}>
@@ -49,13 +48,16 @@ function ClippedDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography noWrap>You think water moves fast? You should see ice.</Typography>
+        {...children}
       </main>
     </div>
   );
 }
 
 ClippedDrawer.propTypes = {
+  children: PropTypes.shape({
+    placeholder: PropTypes.string,
+  }).isRequired,
   classes: PropTypes.shape({
     root: PropTypes.string,
     drawerPaper: PropTypes.string,

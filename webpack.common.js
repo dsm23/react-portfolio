@@ -9,13 +9,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
   entry: {
-    app: './src/main.js',
+    bundle: './src/main.js',
   },
 
   output: {
-    filename: 'bundle.js',
-    path: resolve(__dirname, 'public'),
-    publicPath: '/',
+    filename: '[name].js',
+    path: resolve(__dirname, 'build'),
+    publicPath: '',
   },
 
   context: resolve(__dirname, '.'),
@@ -126,7 +126,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(
       [
-        'public',
+        'build',
       ],
       {
         root: resolve(__dirname, 'src'),
@@ -153,7 +153,6 @@ const config = {
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
   ],
 };
 

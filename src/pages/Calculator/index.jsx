@@ -1,10 +1,11 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 const Calculator = () => {
   return (
-    <div>
-      Calculator
+    <React.Fragment>
+      <Typography noWrap>Calculator</Typography>
       <div>
         <Button variant="raised" color="primary">
           AC
@@ -89,7 +90,7 @@ const Calculator = () => {
           =
         </Button>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

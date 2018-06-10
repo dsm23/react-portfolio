@@ -9,19 +9,20 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --open --config webpack.dev.js",
-    "build": "webpack --open --config webpack.prod.js"
+    "build": "webpack --open --config webpack.prod.js",
+    "eslint": "eslint src/**/*.js"
   },
   "author": "davidMurdoch",
   "license": "MIT",
   "dependencies": {
-    "@material-ui/core": "^1.1.0",
+    "@material-ui/core": "^1.2.0",
     "@material-ui/icons": "^1.1.0",
-    "@material/top-app-bar": "^0.35.0",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "5.1.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.2",
     "prop-types": "^15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",
