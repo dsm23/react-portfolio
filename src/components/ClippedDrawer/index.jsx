@@ -30,7 +30,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
 });
 
-function ClippedDrawer(props) {
+const ClippedDrawer = (props) => {
   const { children, classes } = props;
 
   return (
@@ -52,12 +52,10 @@ function ClippedDrawer(props) {
       </main>
     </div>
   );
-}
+};
 
 ClippedDrawer.propTypes = {
-  children: PropTypes.shape({
-    placeholder: PropTypes.string,
-  }).isRequired,
+  children: PropTypes.node.isRequired,
   classes: PropTypes.shape({
     root: PropTypes.string,
     drawerPaper: PropTypes.string,

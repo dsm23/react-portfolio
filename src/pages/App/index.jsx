@@ -15,6 +15,7 @@ import {
   Contact,
   Weather,
   Pomodoro,
+  TimeStamp,
   Calculator,
   Experience,
   NoughtsAndCrosses,
@@ -42,6 +43,8 @@ const App = () => {
             <Route path="/pomodoro" component={Pomodoro} />
             <Route path="/calculator" component={Calculator} />
             <Route path="/experience" component={Experience} />
+            <Route path="/time-stamp" component={TimeStamp} />
+            <Route path="/time-stamp/:id" component={TimeStamp} />
             <Route path="/noughts-and-crosses" component={NoughtsAndCrosses} />
           </React.Fragment>
         </BrowserRouter>

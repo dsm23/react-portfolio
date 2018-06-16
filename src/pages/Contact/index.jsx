@@ -1,21 +1,43 @@
 import React from 'react';
-import { Page } from '../../components';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
 
-const Contact = () => {
+const styles = theme => ({
+  container: {
+    display: 'flex',
+  },
+  input: {
+    margin: theme.spacing.unit,
+  },
+});
+
+const Contact = (props) => {
+  const { classes } = props;
   return (
-    <Page
-      title="Contact Us"
-      paragraphs={[
-        '8 Roach View',
-        'Off Millhead Way',
-        'Rochford',
-        'Essex',
-        'SS4 1LB',
-        'Telephone: 01702 545429',
-        'Email: sales@imh.co.uk',
-      ]}
-    />
+    <React.Fragment>
+      <Input
+        defaultValue="Hello world"
+        className={classes.input}
+        inputProps={{
+          'aria-label': 'Description',
+        }}
+      />
+      <Input
+        placeholder="Placeholder"
+        className={classes.input}
+        inputProps={{
+          'aria-label': 'Description',
+        }}
+      />
+    </React.Fragment>
   );
 };
 
-export default Contact;
+Contact.propTypes = {
+  classes: PropTypes.shape({
+    input: PropTypes.string,
+  }).isRequired,
+};
+
+export default withStyles(styles)(Contact);

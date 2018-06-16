@@ -30,7 +30,10 @@ const config = {
       {
         enforce: 'pre',
         test: /\.js?/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /vendors/,
+        ],
         loader: 'eslint-loader',
       },
       {

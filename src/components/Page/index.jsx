@@ -16,20 +16,28 @@ const styles = theme => ({
 });
 
 function Page(props) {
-  const { classes, title, paragraphs } = props;
+  const {
+    classes,
+    title,
+    paragraphs,
+    titleVariant,
+    pageComponent,
+  } = props;
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item xs={12}>
           <Paper className={classes.paper} elevation={16}>
-            <Typography variant="headline" component="h3">
+            <Typography variant={titleVariant} component={pageComponent} >
               {title}
             </Typography>
-            { paragraphs.map(value => (
-              <Typography key={`${value}`}component="p">
-                {value}
-              </Typography>
-            ))}
+            { paragraphs.map((value) => {
+              return (
+                <Typography key={`About - ${value}`} component="p">
+                  {value}
+                </Typography>
+              );
+            })}
           </Paper>
         </Grid>
       </Grid>
@@ -44,6 +52,8 @@ Page.propTypes = {
   }).isRequired,
   title: PropTypes.string.isRequired,
   paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  titleVariant: PropTypes.string.isRequired,
+  pageComponent: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Page);
