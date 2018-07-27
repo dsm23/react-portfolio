@@ -2,6 +2,7 @@
   "name": "david-murdoch-react-portfolio",
   "version": "1.0.0",
   "description": "David Murdoch's portfolio made using React",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dsm23/reactPortfolio.git"
