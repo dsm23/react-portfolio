@@ -2,10 +2,10 @@
   "name": "david-murdoch-react-portfolio",
   "version": "1.0.0",
   "description": "David Murdoch's portfolio made using React",
-  "main": "src/main.js",
+  "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dsm23/reactPortfolio.git"
+    "url": "git+https://github.com/dsm23/react-portfolio.git"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --hot --open --config webpack.dev.js",
@@ -15,18 +15,18 @@
   "author": "davidMurdoch",
   "license": "MIT",
   "dependencies": {
-    "@material-ui/core": "^1.2.1",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/core": "^1.5.0",
+    "@material-ui/icons": "^2.0.2",
     "clean-webpack-plugin": "^0.1.19",
-    "cross-env": "5.1.4",
+    "cross-env": "^5.1.4",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
     "prop-types": "^15.6.1",
-    "react": "16.4.0",
-    "react-dom": "16.4.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-router-dom": "^4.2.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.12.0",

@@ -1,11 +1,8 @@
-import React from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React from "react";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { BrowserRouter, Route } from "react-router-dom";
 
-import {
-  ClippedDrawer,
-  NavBar,
-} from '../../components';
+import { ClippedDrawer, NavBar } from "../../../components";
 
 import {
   Home,
@@ -18,13 +15,13 @@ import {
   TimeStamp,
   Calculator,
   Experience,
-  NoughtsAndCrosses,
-} from '..';
+  NoughtsAndCrosses
+} from "..";
 
 const theme = createMuiTheme({
   palette: {
-    type: 'light',
-  },
+    type: "light"
+  }
 });
 
 const App = () => {
