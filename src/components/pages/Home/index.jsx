@@ -1,23 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import { Page } from ".../../../components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import { Page } from '../../../components';
 
-import Image from "../../../../vendors/img/bg-masthead.jpg";
+import Image from '../../../../vendors/img/bg-masthead.jpg';
 
 const styles = () => ({
   root: {
-    backgroundImage: `url(${Image})`
-  }
+    backgroundImage: `url(${Image})`,
+  },
 });
 
-const Home = props => {
+const Home = (props) => {
   const { classes } = props;
   return (
     <Page
       className={classes.root}
       title="David Murdoch's Portfolio"
-      paragraphs={["Self-taught programmer with an eye for small details."]}
+      paragraphs={['Self-taught programmer with an eye for small details.']}
       titleVariant="display2"
       pageComponent="display2"
     />
@@ -26,8 +26,8 @@ const Home = props => {
 
 Home.propTypes = {
   classes: PropTypes.shape({
-    root: PropTypes.string
-  }).isRequired
+    root: PropTypes.string,
+  }).isRequired,
 };
 
 export default withStyles(styles)(Home);

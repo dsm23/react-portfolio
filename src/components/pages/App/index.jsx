@@ -1,8 +1,8 @@
-import React from "react";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { BrowserRouter, Route } from "react-router-dom";
+import React from 'react';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { ClippedDrawer, NavBar } from "../../../components";
+import { ClippedDrawer, NavBar } from '../../../components';
 
 import {
   Home,
@@ -15,22 +15,22 @@ import {
   TimeStamp,
   Calculator,
   Experience,
-  NoughtsAndCrosses
-} from "..";
+  NoughtsAndCrosses,
+} from '..';
 
 const theme = createMuiTheme({
   palette: {
-    type: "light"
-  }
+    type: 'light',
+  },
 });
 
-const App = () => {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <NavBar />
-      <ClippedDrawer>
-        <BrowserRouter>
-          <React.Fragment>
+const App = () => (
+  <MuiThemeProvider theme={theme}>
+    <BrowserRouter>
+      <React.Fragment>
+        <NavBar />
+        <ClippedDrawer>
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/wiki" component={Wiki} />
             <Route path="/about" component={About} />
@@ -43,11 +43,11 @@ const App = () => {
             <Route path="/time-stamp" component={TimeStamp} />
             <Route path="/time-stamp/:id" component={TimeStamp} />
             <Route path="/noughts-and-crosses" component={NoughtsAndCrosses} />
-          </React.Fragment>
-        </BrowserRouter>
-      </ClippedDrawer>
-    </MuiThemeProvider>
-  );
-};
+          </Switch>
+        </ClippedDrawer>
+      </React.Fragment>
+    </BrowserRouter>
+  </MuiThemeProvider>
+);
 
 export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -21,27 +22,33 @@ const styles = {
   },
 };
 
-const NavBar = (props) => {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            David Murdoch
-          </Typography>
-          <Button color="inherit">PROJECTS</Button>
-          <Button color="inherit" href="/about">ABOUT</Button>
-          <Button color="inherit">EXPERIENCE</Button>
-          <Button color="inherit" href="/contact">CONTACT</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-};
+const NavBar = ({ classes }) => (
+  <div className={classes.root}>
+    <AppBar position="fixed">
+      <Toolbar>
+        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="title" color="inherit" className={classes.flex}>
+          David Murdoch
+        </Typography>
+        <Button color="inherit">PROJECTS</Button>
+        <Button color="inherit">
+          <NavLink
+            to="/about"
+            activeStyle={{
+              color: 'inherit',
+            }}
+          >
+            ABOUT
+          </NavLink>
+        </Button>
+        <Button color="inherit">EXPERIENCE</Button>
+        <Button color="inherit" href="/contact">CONTACT</Button>
+      </Toolbar>
+    </AppBar>
+  </div>
+);
 
 NavBar.propTypes = {
   classes: PropTypes.shape({

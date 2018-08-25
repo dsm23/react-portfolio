@@ -15,35 +15,31 @@ const styles = theme => ({
   },
 });
 
-function Page(props) {
-  const {
-    classes,
-    title,
-    paragraphs,
-    titleVariant,
-    pageComponent,
-  } = props;
-  return (
-    <div className={classes.root}>
-      <Grid container spacing={24}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper} elevation={16}>
-            <Typography variant={titleVariant} component={pageComponent} >
-              {title}
-            </Typography>
-            { paragraphs.map((value) => {
-              return (
-                <Typography key={`About - ${value}`} component="p">
-                  {value}
-                </Typography>
-              );
-            })}
-          </Paper>
-        </Grid>
+const Page = ({
+  classes,
+  title,
+  paragraphs,
+  titleVariant,
+}) => (
+  <div className={classes.root}>
+    <Grid container spacing={24}>
+      <Grid item xs={12}>
+        <Paper className={classes.paper} elevation={16}>
+          <Typography variant={titleVariant} >
+            {title}
+          </Typography>
+          { paragraphs.map((value) => {
+            return (
+              <Typography key={`About - ${value}`} component="p">
+                {value}
+              </Typography>
+            );
+          })}
+        </Paper>
       </Grid>
-    </div>
-  );
-}
+    </Grid>
+  </div>
+);
 
 Page.propTypes = {
   classes: PropTypes.shape({
@@ -53,7 +49,6 @@ Page.propTypes = {
   title: PropTypes.string.isRequired,
   paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
   titleVariant: PropTypes.string.isRequired,
-  pageComponent: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Page);
