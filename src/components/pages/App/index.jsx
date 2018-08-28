@@ -2,7 +2,7 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { ClippedDrawer, NavBar } from '../../../components';
+import { ClippedDrawer, NavBar } from '../..';
 
 import {
   Home,

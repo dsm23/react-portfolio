@@ -26,27 +26,29 @@ export default class DrawerListItems extends React.Component {
   state = { open: false };
 
   handleClick = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   }
 
   render() {
     const { classes } = this.props;
+    const { open } = this.state;
     return (
       <div>
         <ListItem button component="a" href="/about">
-          <ListItemIcon >
+          <ListItemIcon>
             <PersonIcon />
           </ListItemIcon>
           <ListItemText primary="About" />
         </ListItem>
         <ListItem button component="a" href="/contact">
-          <ListItemIcon >
+          <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
           <ListItemText primary="Contact" />
         </ListItem>
         <ListItem button component="a" href="/experience">
-          <ListItemIcon >
+          <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>
           <ListItemText primary="Experience" />
@@ -56,10 +58,10 @@ export default class DrawerListItems extends React.Component {
             <InboxIcon />
           </ListItemIcon>
           <ListItemText inset primary="Projects" />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Divider />
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+        <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItem button className={classes.nested}>
               <ListItemIcon>
@@ -68,7 +70,7 @@ export default class DrawerListItems extends React.Component {
               <ListItemText inset primary="Starred" />
             </ListItem>
             <ListItem button component="a" href="/calculator">
-              <ListItemIcon >
+              <ListItemIcon>
                 <GridOnIcon />
               </ListItemIcon>
               <ListItemText primary="Calculator" />

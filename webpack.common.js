@@ -8,9 +8,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
-  entry: resolve(__dirname, 'src/main.js'),
+  entry: [
+    './src/main.js'
+  ],
 
   //context: resolve(__dirname, 'src/main.js'),
+
+  devtool: 'inline-source-map',
+  mode: 'development',
+
+  devServer: {
+    contentBase: resolve(__dirname, 'src'),
+    historyApiFallback: true,
+    host: 'localhost',
+    publicPath: '/',
+    port: 8090,
+    hotOnly: true
+  },
 
   output: {
     filename: '[name].js',
@@ -134,12 +148,7 @@ const config = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['build'], {
-      root: resolve(__dirname, 'src'),
-      exclude: '/node_modules/',
-      verbose: true,
-      dry: false
-    }),
+    new CleanWebpackPlugin(['build']),
     new webpack.LoaderOptionsPlugin({
       test: /\.js?/,
       options: {
@@ -154,6 +163,7 @@ const config = {
       template: 'index.ejs'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),

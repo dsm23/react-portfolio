@@ -6,6 +6,7 @@ export Simon from './Simon';
 export Contact from './Contact';
 export Weather from './Weather';
 export Pomodoro from './Pomodoro';
+export TimeStamp from './TimeStamp';
 export Calculator from './Calculator';
 export Experience from './Experience';
 export NoughtsAndCrosses from './NoughtsAndCrosses';

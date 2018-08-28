@@ -25,7 +25,7 @@ const Page = ({
     <Grid container spacing={24}>
       <Grid item xs={12}>
         <Paper className={classes.paper} elevation={16}>
-          <Typography variant={titleVariant} >
+          <Typography variant={titleVariant}>
             {title}
           </Typography>
           { paragraphs.map((value) => {

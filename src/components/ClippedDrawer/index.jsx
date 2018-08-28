@@ -48,7 +48,7 @@ const ClippedDrawer = (props) => {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {...children}
+        {children}
       </main>
     </div>
   );

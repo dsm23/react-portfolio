@@ -15,10 +15,5 @@ module.exports = merge(common, {
     publicPath: '/',
     port: 8090,
     hot: true
-  },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
-
+  }
 });
