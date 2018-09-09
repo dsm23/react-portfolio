@@ -2,6 +2,8 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import router from '../../../constants/router';
+
 import { ClippedDrawer, NavBar } from '../..';
 
 import {
@@ -27,25 +29,24 @@ const theme = createMuiTheme({
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <BrowserRouter>
-      <React.Fragment>
+      <>
         <NavBar />
         <ClippedDrawer>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/wiki" component={Wiki} />
-            <Route path="/about" component={About} />
-            <Route path="/simon" component={Simon} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/weather" component={Weather} />
-            <Route path="/pomodoro" component={Pomodoro} />
-            <Route path="/calculator" component={Calculator} />
-            <Route path="/experience" component={Experience} />
-            <Route path="/time-stamp" component={TimeStamp} />
-            <Route path="/time-stamp/:id" component={TimeStamp} />
-            <Route path="/noughts-and-crosses" component={NoughtsAndCrosses} />
+            <Route exact path={router.home} component={Home} />
+            <Route path={router.wiki} component={Wiki} />
+            <Route path={router.about} component={About} />
+            <Route path={router.simon} component={Simon} />
+            <Route path={router.contact} component={Contact} />
+            <Route path={router.weather} component={Weather} />
+            <Route path={router.calculator} component={Calculator} />
+            <Route path={router.experience} component={Experience} />
+            <Route path={router.timeStamp} component={TimeStamp} />
+            <Route path={router.pomodoroTimer} component={Pomodoro} />
+            <Route path={router.noughtsAndCrosses} component={NoughtsAndCrosses} />
           </Switch>
         </ClippedDrawer>
-      </React.Fragment>
+      </>
     </BrowserRouter>
   </MuiThemeProvider>
 );

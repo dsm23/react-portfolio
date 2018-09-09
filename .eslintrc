@@ -20,7 +20,6 @@
     "react/prefer-stateless-function": "warn",
     "react/forbid-prop-types": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "linebreak-style": "off",
     "global-require": "off",
     "semi": "warn",
     "arrow-body-style": "off"

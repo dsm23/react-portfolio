@@ -9,6 +9,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
   entry: [
+    'webpack-dev-server/client?http://localhost:8090',
+    'webpack/hot/only-dev-server',
     './src/main.js'
   ],
 

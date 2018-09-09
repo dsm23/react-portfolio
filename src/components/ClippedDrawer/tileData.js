@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -22,6 +23,59 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 import Collapse from '@material-ui/core/Collapse';
 
+import router from '../../constants/router';
+
+const arrPersonDetails = [
+  {
+    label: 'About',
+    href: router.about,
+    icon: <PersonIcon />,
+  },
+  {
+    label: 'Contact',
+    href: router.contact,
+    icon: <MailIcon />,
+  },
+  {
+    label: 'Experience',
+    href: router.experience,
+    icon: <WorkIcon />,
+  },
+];
+
+const arrProjects = [
+  {
+    label: 'Calculator',
+    href: router.calculator,
+    icon: <GridOnIcon />,
+  },
+  {
+    label: 'Weather',
+    href: router.weather,
+    icon: <CloudIcon />,
+  },
+  {
+    label: 'Noughts And Crosses',
+    href: router.noughtsAndCrosses,
+    icon: <GamesIcon />,
+  },
+  {
+    label: 'Pomodoro Timer',
+    href: router.pomodoroTimer,
+    icon: <AlarmIcon />,
+  },
+  {
+    label: 'Simon Game',
+    href: router.simon,
+    icon: <MemoryIcon />,
+  },
+  {
+    label: 'Wikipedia Viewer',
+    href: router.wiki,
+    icon: <SearchIcon />,
+  },
+];
+
 export default class DrawerListItems extends React.Component {
   state = { open: false };
 
@@ -34,25 +88,19 @@ export default class DrawerListItems extends React.Component {
     const { classes } = this.props;
     const { open } = this.state;
     return (
-      <div>
-        <ListItem button component="a" href="/about">
-          <ListItemIcon>
-            <PersonIcon />
-          </ListItemIcon>
-          <ListItemText primary="About" />
-        </ListItem>
-        <ListItem button component="a" href="/contact">
-          <ListItemIcon>
-            <MailIcon />
-          </ListItemIcon>
-          <ListItemText primary="Contact" />
-        </ListItem>
-        <ListItem button component="a" href="/experience">
-          <ListItemIcon>
-            <WorkIcon />
-          </ListItemIcon>
-          <ListItemText primary="Experience" />
-        </ListItem>
+      <>
+        {
+          arrPersonDetails.map(
+            elem => (
+              <ListItem button component={NavLink} to={elem.href} key={`${elem.label}-${elem.href}`}>
+                <ListItemIcon>
+                  {elem.icon}
+                </ListItemIcon>
+                <ListItemText primary={elem.label} />
+              </ListItem>
+            ),
+          )
+        }
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
             <InboxIcon />
@@ -69,45 +117,21 @@ export default class DrawerListItems extends React.Component {
               </ListItemIcon>
               <ListItemText inset primary="Starred" />
             </ListItem>
-            <ListItem button component="a" href="/calculator">
-              <ListItemIcon>
-                <GridOnIcon />
-              </ListItemIcon>
-              <ListItemText primary="Calculator" />
-            </ListItem>
-            <ListItem button component="a" href="/weather">
-              <ListItemIcon>
-                <CloudIcon />
-              </ListItemIcon>
-              <ListItemText primary="Weather" />
-            </ListItem>
-            <ListItem button component="a" href="/noughts-and-crosses">
-              <ListItemIcon>
-                <GamesIcon />
-              </ListItemIcon>
-              <ListItemText primary="Noughts and Crosses" />
-            </ListItem>
-            <ListItem button component="a" href="/pomodoro">
-              <ListItemIcon>
-                <AlarmIcon />
-              </ListItemIcon>
-              <ListItemText primary="Pomodoro Timer" />
-            </ListItem>
-            <ListItem button component="a" href="/simon">
-              <ListItemIcon>
-                <MemoryIcon />
-              </ListItemIcon>
-              <ListItemText primary="Simon Game" />
-            </ListItem>
-            <ListItem button component="a" href="/wiki">
-              <ListItemIcon>
-                <SearchIcon />
-              </ListItemIcon>
-              <ListItemText primary="Wikipedia Viewer" />
-            </ListItem>
+            {
+              arrProjects.map(
+                elem => (
+                  <ListItem button component={NavLink} to={elem.href} key={`${elem.label}-${elem.href}`}>
+                    <ListItemIcon>
+                      {elem.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={elem.label} />
+                  </ListItem>
+                ),
+              )
+            }
           </List>
         </Collapse>
-      </div>
+      </>
     );
   }
 }

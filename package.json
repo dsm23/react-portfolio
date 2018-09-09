@@ -1,6 +1,6 @@
 {
   "name": "david-murdoch-react-portfolio",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "David Murdoch's portfolio made using React",
   "private": true,
   "repository": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --config webpack.dev.js",
-    "build": "webpack --open --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "eslint": "eslint src/**/*.js"
   },
   "author": "davidMurdoch",

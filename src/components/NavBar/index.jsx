@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import router from '../../constants/router';
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -33,18 +35,9 @@ const NavBar = ({ classes }) => (
           David Murdoch
         </Typography>
         <Button color="inherit">PROJECTS</Button>
-        <Button color="inherit">
-          <NavLink
-            to="/about"
-            activeStyle={{
-              color: 'inherit',
-            }}
-          >
-            ABOUT
-          </NavLink>
-        </Button>
+        <Button component={NavLink} color="inherit" to={router.about}>ABOUT</Button>
         <Button color="inherit">EXPERIENCE</Button>
-        <Button color="inherit" href="/contact">CONTACT</Button>
+        <Button component={NavLink} color="inherit" to={router.contact}>CONTACT</Button>
       </Toolbar>
     </AppBar>
   </div>
