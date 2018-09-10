@@ -8,12 +8,20 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   mode: 'development',
 
+  entry: [
+    'webpack-dev-server/client?http://localhost:8090',
+    'webpack/hot/only-dev-server'
+  ],
+
   devServer: {
     contentBase: resolve(__dirname, 'src'),
     historyApiFallback: true,
     host: 'localhost',
     publicPath: '/',
     port: 8090,
-    hot: true
-  }
+    hotOnly: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 });

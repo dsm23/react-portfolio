@@ -1,4 +1,13 @@
 language: node_js
+ache:
+  npm: true
+  directories:
+    - node_modules
+install:
+  - npm
+  - npm i
+script:
+  - npm run build
 deploy:
   provider: pages
   skip-cleanup: true

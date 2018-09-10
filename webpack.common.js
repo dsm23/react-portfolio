@@ -9,24 +9,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8090',
-    'webpack/hot/only-dev-server',
     './src/main.js'
   ],
 
   //context: resolve(__dirname, 'src/main.js'),
-
-  devtool: 'inline-source-map',
-  mode: 'development',
-
-  devServer: {
-    contentBase: resolve(__dirname, 'src'),
-    historyApiFallback: true,
-    host: 'localhost',
-    publicPath: '/',
-    port: 8090,
-    hotOnly: true
-  },
 
   output: {
     filename: '[name].js',
@@ -51,25 +37,6 @@ const config = {
         test: /\.js?/,
         loaders: ['babel-loader'],
         exclude: /node_modules/
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-              'css-loader',
-              {
-                loader: 'sass-loader',
-                query: {
-                  sourceMap: false
-                }
-              }
-            ],
-            publicPath: '../'
-          })
-        )
       },
       {
         test: /\.css$/,
@@ -165,7 +132,6 @@ const config = {
       template: 'index.ejs'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),

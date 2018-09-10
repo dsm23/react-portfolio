@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -18,6 +19,9 @@ const styles = {
   flex: {
     flex: 1,
   },
+  noUnderline: {
+    textDecoration: 'none',
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
@@ -31,7 +35,13 @@ const NavBar = ({ classes }) => (
         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           <MenuIcon />
         </IconButton>
-        <Typography variant="title" color="inherit" className={classes.flex}>
+        <Typography
+          component={NavLink}
+          to={router.home}
+          variant="title"
+          color="inherit"
+          className={classNames(classes.flex, classes.noUnderline)}
+        >
           David Murdoch
         </Typography>
         <Button color="inherit">PROJECTS</Button>
