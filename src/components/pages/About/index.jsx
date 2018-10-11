@@ -22,8 +22,8 @@ const About = () => {
         3dprintingindustry.com gave me a very good understanding of Wordpress.`,
         'I link my Curriculum Vitae for your consideration. Designed by Freepik',
       ]}
-      titleVariant="display2"
-      pageComponent="display2"
+      titleVariant="h3"
+      pageComponent="h3"
     />
   );
 };

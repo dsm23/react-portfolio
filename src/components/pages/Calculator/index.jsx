@@ -12,7 +12,7 @@ const Calculator = () => {
   ];
   return (
     <React.Fragment>
-      <Typography variant="headline" component="h1" noWrap>Calculator</Typography>
+      <Typography variant="h5" component="h5" noWrap>Calculator</Typography>
       {
         matrix.map((value, index) => {
           return (

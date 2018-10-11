@@ -23,22 +23,22 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 import Collapse from '@material-ui/core/Collapse';
 
-import router from '../../constants/router';
+import ROUTER from '../../constants/router';
 
 const arrPersonDetails = [
   {
     label: 'About',
-    href: router.about,
+    href: ROUTER.about,
     icon: <PersonIcon />,
   },
   {
     label: 'Contact',
-    href: router.contact,
+    href: ROUTER.contact,
     icon: <MailIcon />,
   },
   {
     label: 'Experience',
-    href: router.experience,
+    href: ROUTER.experience,
     icon: <WorkIcon />,
   },
 ];
@@ -46,32 +46,32 @@ const arrPersonDetails = [
 const arrProjects = [
   {
     label: 'Calculator',
-    href: router.calculator,
+    href: ROUTER.calculator,
     icon: <GridOnIcon />,
   },
   {
     label: 'Weather',
-    href: router.weather,
+    href: ROUTER.weather,
     icon: <CloudIcon />,
   },
   {
     label: 'Noughts And Crosses',
-    href: router.noughtsAndCrosses,
+    href: ROUTER.noughtsAndCrosses,
     icon: <GamesIcon />,
   },
   {
     label: 'Pomodoro Timer',
-    href: router.pomodoroTimer,
+    href: ROUTER.pomodoroTimer,
     icon: <AlarmIcon />,
   },
   {
     label: 'Simon Game',
-    href: router.simon,
+    href: ROUTER.simon,
     icon: <MemoryIcon />,
   },
   {
     label: 'Wikipedia Viewer',
-    href: router.wiki,
+    href: ROUTER.wiki,
     icon: <SearchIcon />,
   },
 ];
@@ -79,10 +79,7 @@ const arrProjects = [
 export default class DrawerListItems extends React.Component {
   state = { open: false };
 
-  handleClick = () => {
-    const { open } = this.state;
-    this.setState({ open: !open });
-  }
+  handleClick = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
     const { classes } = this.props;

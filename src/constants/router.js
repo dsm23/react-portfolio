@@ -1,4 +1,4 @@
-const routerEndPoints = {
+const ROUTER_END_POINTS = {
   about: '/about',
   calculator: '/calculator',
   contact: '/contact',
@@ -12,4 +12,4 @@ const routerEndPoints = {
   wiki: '/wiki',
 };
 
-export default routerEndPoints;
+export default ROUTER_END_POINTS;

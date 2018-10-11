@@ -1,10 +1,8 @@
 const { resolve } = require('path');
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
@@ -15,9 +13,8 @@ const config = {
   //context: resolve(__dirname, 'src/main.js'),
 
   output: {
-    filename: '[name].js',
-    path: resolve(__dirname, 'build'),
-    publicPath: ''
+    filename: 'bundle.js',
+    path: resolve(__dirname, './build'),
   },
 
   resolve: {
@@ -35,8 +32,10 @@ const config = {
       },
       {
         test: /\.js?/,
-        loaders: ['babel-loader'],
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.css$/,
@@ -129,13 +128,14 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       title: 'David Murdoch Portfolio',
-      template: 'index.ejs'
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+      template: './index.ejs',
+      inject: 'body'
+    })
+    // new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
-    new webpack.NamedModulesPlugin()
+    // new webpack.NamedModulesPlugin()
   ]
 };
 

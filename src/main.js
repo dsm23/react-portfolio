@@ -3,6 +3,6 @@ import { render } from 'react-dom';
 
 import { App } from './components';
 
-require('typeface-roboto');
+import 'typeface-roboto';
 
 render(<App />, document.getElementById('root'));
