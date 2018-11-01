@@ -2,6 +2,7 @@ const { resolve } = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -130,7 +131,8 @@ const config = {
       title: 'David Murdoch Portfolio',
       template: './index.ejs',
       inject: 'body'
-    })
+    }),
+    new BundleAnalyzerPlugin()
     // new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),

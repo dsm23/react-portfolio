@@ -1,8 +1,6 @@
 language: node_js
-ache:
-  npm: true
-  directories:
-    - node_modules
+node_js:
+  - "stable"
 install:
   - npm i
 script:
@@ -12,5 +10,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
+  local-dir : './build'
   on:
     branch: master

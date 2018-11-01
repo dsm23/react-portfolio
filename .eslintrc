@@ -23,5 +23,8 @@
     "global-require": "off",
     "semi": "warn",
     "arrow-body-style": "off"
-  }
+  },
+  "plugins": [
+    "prettier"
+  ]
 }
