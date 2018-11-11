@@ -2,16 +2,14 @@ const { resolve } = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
   entry: [
-    './src/main.js'
+    './src/main.js',
   ],
 
-  //context: resolve(__dirname, 'src/main.js'),
+  // context: resolve(__dirname, 'src/main.js'),
 
   output: {
     filename: 'bundle.js',
@@ -20,23 +18,23 @@ const config = {
 
   resolve: {
     extensions: ['.js', '.jsx'],
-    mainFiles: ['index']
+    mainFiles: ['index'],
   },
 
   module: {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js?/,
+        test: /\.(js|jsx)/,
         exclude: [/node_modules/, /vendors/],
-        loader: 'eslint-loader'
+        loader: 'eslint-loader',
       },
       {
-        test: /\.js?/,
+        test: /\.(js|jsx)/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
@@ -58,10 +56,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'image/png',
-              name: 'images/[name].[ext]'
-            }
-          }
-        ]
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
@@ -69,10 +67,10 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]'
-            }
-          }
-        ]
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -82,10 +80,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'application/font-woff',
-              name: 'fonts/[name].[ext]'
-            }
-          }
-        ]
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
@@ -95,10 +93,10 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'application/octet-stream',
-              name: 'fonts/[name].[ext]'
-            }
-          }
-        ]
+              name: 'fonts/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -108,37 +106,36 @@ const config = {
             options: {
               limit: 8192,
               mimetype: 'image/svg+xml',
-              name: 'images/[name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new CleanWebpackPlugin(['build']),
     new webpack.LoaderOptionsPlugin({
-      test: /\.js?/,
+      test: /\.(js|jsx)/,
       options: {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),
-          cache: false
-        }
-      }
+          cache: false,
+        },
+      },
     }),
     new HtmlWebpackPlugin({
       title: 'David Murdoch Portfolio',
       template: './index.ejs',
-      inject: 'body'
+      inject: 'body',
     }),
-    new BundleAnalyzerPlugin()
     // new webpack.optimize.ModuleConcatenationPlugin(),
     // new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
     // new CopyWebpackPlugin([{ from: 'vendors', to: 'vendors' }]),
     // new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     // new webpack.NamedModulesPlugin()
-  ]
+  ],
 };
 
 module.exports = config;
