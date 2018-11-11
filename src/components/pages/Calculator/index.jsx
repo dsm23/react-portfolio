@@ -12,24 +12,26 @@ const Calculator = () => {
   ];
   return (
     <React.Fragment>
-      <Typography variant="h5" component="h5" noWrap>Calculator</Typography>
-      {
-        matrix.map((value, index) => {
-          return (
-            <div key={`Calculator matrix - ${value}`}>
-              {
-                matrix[index].map((str) => {
-                  return (
-                    <Button variant="raised" color="primary" key={`Calculator matrix - ${str}`}>
-                      {str}
-                    </Button>
-                  );
-                })
-              }
-            </div>
-          );
-        })
-      }
+      <Typography variant="h5" component="h5" noWrap>
+        Calculator
+      </Typography>
+      {matrix.map((value, index) => {
+        return (
+          <div key={`Calculator matrix - ${value}`}>
+            {matrix[index].map((str) => {
+              return (
+                <Button
+                  variant="raised"
+                  color="primary"
+                  key={`Calculator matrix - ${str}`}
+                >
+                  {str}
+                </Button>
+              );
+            })}
+          </div>
+        );
+      })}
     </React.Fragment>
   );
 };

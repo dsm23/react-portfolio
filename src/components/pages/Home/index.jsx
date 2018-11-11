@@ -1,10 +1,10 @@
-import React from 'react';
-import { Page } from '../..';
+import React from "react";
+import Page from "../../Page";
 
 const Home = () => (
   <Page
     title="David Murdoch's Portfolio"
-    paragraphs={['Self-taught programmer with an eye for small details.']}
+    paragraphs={["Self-taught programmer with an eye for small details."]}
     titleVariant="h3"
     pageComponent="h3"
   />

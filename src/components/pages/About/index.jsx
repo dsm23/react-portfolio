@@ -1,5 +1,5 @@
-import React from 'react';
-import { Page } from '../..';
+import React from "react";
+import Page from "../../Page";
 
 const About = () => (
   <Page
@@ -19,11 +19,11 @@ const About = () => (
         resources Codecademy and freeCodeCamp. Those resources also gave me a
         basic demonstration of PHP, Ruby and AngularJS. But my expereience at
         3dprintingindustry.com gave me a very good understanding of Wordpress.`,
-      'I link my Curriculum Vitae for your consideration. Designed by Freepik',
+      "I link my Curriculum Vitae for your consideration. Designed by Freepik"
     ]}
     titleVariant="h3"
     pageComponent="h3"
   />
-)
+);
 
 export default About;

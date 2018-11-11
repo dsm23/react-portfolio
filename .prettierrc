@@ -1,7 +1,11 @@
 {
-  "useTabs": false, // Indent lines with tabs instead of spaces.
   "printWidth": 80, // Specify the length of line that the printer will wrap on.
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "useTabs": false, // Indent lines with tabs instead of spaces.
   "tabWidth": 2, // Specify the number of spaces per indentation-level.
+  "filepath": "src"
   "singleQuote": true, // Use single quotes instead of double quotes.
   /**
    * Print trailing commas wherever possible.
@@ -17,6 +21,7 @@
    * alone on the next line
    */
   "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
   /**
    * Specify which parse to use.
    * Valid options:
